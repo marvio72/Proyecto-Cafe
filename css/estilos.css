@@ -88,6 +88,10 @@ img {
     .grid {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
     }
     .columna-4{
         flex: 0 0 calc(33.3% - 1rem);
@@ -97,6 +101,12 @@ img {
     }
     .columna-8 {
         flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columna-10 {
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+    .columna-12 {
+        flex: 0 0 100%;
     }
 }
 /*
@@ -118,10 +128,15 @@ img {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 2rem;
+    flex: 0 0 100%
+}
+.btn:hover {
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     .btn {
         display: inline-block;
+        flex: 0 0 auto;
     }
 }
 .btn-primario{
@@ -312,4 +327,40 @@ img {
 }
 .site-footer p span{
     font-weight: 700;
+}
+/* 
+  dP""b8  dP"Yb  88b 88 888888    db     dP""b8 888888  dP"Yb  
+ dP   `" dP   Yb 88Yb88   88     dPYb   dP   `"   88   dP   Yb 
+ Yb      Yb   dP 88 Y88   88    dP__Yb  Yb        88   Yb   dP 
+  YboodP  YbodP  88  Y8   88   dP""""Yb  YboodP   88    YbodP  
+*/
+.formulario-contacto {
+    background: var(--textoHeader);
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario-contacto {
+        margin-top: -10rem;
+    }
+}
+.formulario-contacto .campo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;  
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea{
+    flex: 1;
+    border: 1px solid var(--lineaSeparador);
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 20rem;
+}
+.formulario-contacto .enviar{
+    display: flex;
+    justify-content: flex-end;
 }
