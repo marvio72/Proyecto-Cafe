@@ -89,8 +89,14 @@ img {
         display: flex;
         justify-content: space-between;
     }
+    .columna-4{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
     .columna-6 {
         flex: 0 0 calc(50% - 1rem);
+    }
+    .columna-8 {
+        flex: 0 0 calc(66.6% - 1rem);
     }
 }
 /*
@@ -267,6 +273,7 @@ img {
     list-style: none;
 }
 .curso{
+    padding-top: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--lineaSeparador);
 }
@@ -278,7 +285,8 @@ img {
     font-weight: 700;
     font-size: 2rem;
 }
-.curso span{
+.curso p span,
+.curso p.descripcion{
     font-weight: 400;
 }
 
