@@ -8,7 +8,10 @@
 */
 :root {
     /* Colores */
-    --textoHeader : #FFFFFF;
+    --textoHeader    : #FFFFFF;
+    --lineaSeparador : #E1E1E1;
+    --botonPrimario  : #000000;
+    --botonSecundario: #784D3C;
     /* Fuentes */
     --fuentePrimaria  : 'Open Sans', sans-serif;
     --fuenteSecundaria: 'PT Sans', sans-serif;
@@ -37,6 +40,7 @@ body {
 */
 .contenedor {
     max-width: 1200px;
+    width: 95%;
     margin: 0 auto;
 }
 h1, h2, h3, h4 {
@@ -47,6 +51,7 @@ h1 {
 }
 h2 {
     font-size: 4rem;
+    line-height: 1.2;
 }
 h3 {
     font-size: 3.2rem;
@@ -70,6 +75,38 @@ img {
 }
 .no-margin {
     margin: 0;
+}
+
+/*
+ 
+ 88""Yb  dP"Yb  888888  dP"Yb  88b 88 888888 .dP"Y8 
+ 88__dP dP   Yb   88   dP   Yb 88Yb88 88__   `Ybo." 
+ 88""Yb Yb   dP   88   Yb   dP 88 Y88 88""   o.`Y8b 
+ 88oodP  YbodP    88    YbodP  88  Y8 888888 8bodP' 
+ 
+*/
+.btn{
+    display: block;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--textoHeader);
+    text-decoration: none;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+@media (min-width: 768px) {
+    .btn {
+        display: inline-block;
+    }
+}
+.btn-primario{
+    background-color: var(--botonPrimario);
+}
+.btn-secundario{
+    background-color: var(--botonSecundario);
 }
 /*
  
@@ -108,7 +145,9 @@ img {
 .navegacion a {
     text-align: center;
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    color: var(--textoHeader);
+    text-decoration: none;
 }
 @media (min-width: 768px) {
     .navegacion a {
@@ -132,4 +171,121 @@ img {
 }
 .texto-header p {
     font-size: 2.2rem;
+}
+
+/*
+ 
+  dP""b8  dP"Yb  88b 88          88""Yb 88""Yb 88 88b 88  dP""b8 88 88""Yb    db    88     
+ dP   `" dP   Yb 88Yb88 ________ 88__dP 88__dP 88 88Yb88 dP   `" 88 88__dP   dPYb   88     
+ Yb      Yb   dP 88 Y88 """""""" 88"""  88"Yb  88 88 Y88 Yb      88 88"""   dP__Yb  88  .o 
+  YboodP  YbodP  88  Y8          88     88  Yb 88 88  Y8  YboodP 88 88     dP""""Yb 88ood8 
+ 
+*/
+.contenido-principal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog,
+.cursos {
+    /* flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%; */
+    flex: 0 0 100% /*Es lo mismo que lo anterior pero resumido */
+}
+.cursos{
+    order: -1;
+}
+@media (min-width: 768px) {
+    .contenido-principal {
+        justify-content: space-between;
+    }
+    .blog {
+        flex-basis: 66.6%;
+    }
+    .cursos {
+        flex-basis: calc(33.3% - 4rem);
+        order: 2;
+    }
+}
+
+/*
+ 
+  dP"Yb  88""Yb  dP""b8 88  dP"Yb  88b 88    db    88     
+ dP   Yb 88__dP dP   `" 88 dP   Yb 88Yb88   dPYb   88     
+ Yb   dP 88"""  Yb      88 Yb   dP 88 Y88  dP__Yb  88  .o 
+  YbodP  88      YboodP 88  YbodP  88  Y8 dP""""Yb 88ood8 
+ 
+*/
+/* Otra manera de presentarlo con imagenes pequeñas*/
+/* .entrada-blog{
+    display: flex;
+    justify-content: space-between;
+}
+.entrada-blog .imagen {
+    flex: 0 0 40%;
+}
+.entrada-blog .contenido-blog{
+    flex: 0 0 calc(60% - 2rem)
+} */
+
+/* Ingresar una linea como separadaor */
+.entrada-blog {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--lineaSeparador);
+}
+.entrada-blog:last-of-type{
+    border: none;
+}
+
+/*
+ 
+  dP""b8 88   88 88""Yb .dP"Y8  dP"Yb  .dP"Y8     .dP"Y8 88 8888b.  888888 88""Yb    db    88""Yb 
+ dP   `" 88   88 88__dP `Ybo." dP   Yb `Ybo."     `Ybo." 88  8I  Yb 88__   88__dP   dPYb   88__dP 
+ Yb      Y8   8P 88"Yb  o.`Y8b Yb   dP o.`Y8b     o.`Y8b 88  8I  dY 88""   88""Yb  dP__Yb  88"Yb  
+  YboodP `YbodP' 88  Yb 8bodP'  YbodP  8bodP'     8bodP' 88 8888Y"  888888 88oodP dP""""Yb 88  Yb 
+ 
+*/
+.cursos-lista{
+    padding: 0;
+    list-style: none;
+}
+.curso{
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--lineaSeparador);
+}
+.curso:last-of-type{
+    border: none;
+}
+.curso p{
+    font-family: var(--fuenteSecundaria);
+    font-weight: 700;
+    font-size: 2rem;
+}
+.curso span{
+    font-weight: 400;
+}
+
+/*
+ 
+ 888888  dP"Yb   dP"Yb  888888 888888 88""Yb 
+ 88__   dP   Yb dP   Yb   88   88__   88__dP 
+ 88""   Yb   dP Yb   dP   88   88""   88"Yb  
+ 88      YbodP   YbodP    88   888888 88  Yb 
+ 
+*/
+.site-footer{
+    background-color: var(--botonPrimario);
+    padding: 3rem;
+    margin-top: 4rem;
+}
+.site-footer p{
+    color: var(--textoHeader);
+    font-size: 4rem;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 400;
+    text-align: center;
+}
+.site-footer p span{
+    font-weight: 700;
 }
