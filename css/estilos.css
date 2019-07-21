@@ -76,7 +76,23 @@ img {
 .no-margin {
     margin: 0;
 }
-
+/*
+ 
+  dP""b8 88""Yb 88 8888b.  
+ dP   `" 88__dP 88  8I  Yb 
+ Yb  "88 88"Yb  88  8I  dY 
+  YboodP 88  Yb 88 8888Y"  
+ 
+*/
+@media (min-width: 768px) {
+    .grid {
+        display: flex;
+        justify-content: space-between;
+    }
+    .columna-6 {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
 /*
  
  88""Yb  dP"Yb  888888  dP"Yb  88b 88 888888 .dP"Y8 
